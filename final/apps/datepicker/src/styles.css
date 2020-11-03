@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #F0DB4F;
+}
+
+.card {
+  width: 320px;
+  height: 340px;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.a-day, .a-week-day {
+  display: inline-block;
+  text-align: right;
+  width: 42px;
+  height: 42px;
+}
+
+.a-day span, .a-week-day span {
+  margin-right: 4px;
+  margin-top: 4px;
+}
+
+.a-day span.outside {
+  color: lightgray;
+}
+
+.a-week-day span {
+  color: red;
+}
+
+button {
+  margin: 20px;
+}

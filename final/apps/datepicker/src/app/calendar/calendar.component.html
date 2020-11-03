@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    {{ date | calendar }}
+  </div>
+  <div class="card-block">
+    <div *ngFor="let weekDay of weekDays" class="a-week-day">
+      <span>{{weekDay}}</span>
+    </div>
+    <div *ngFor="let day of days" class="a-day">
+      <span [class.outside]="day.outsideMonth">{{day.day}}</span>
+    </div>
+  </div>
+</div>
