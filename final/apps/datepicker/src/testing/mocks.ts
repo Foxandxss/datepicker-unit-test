@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-calendar',
+  selector: 'datepicker-calendar',
   template: ''
 })
 export class MockCalendarComponent {

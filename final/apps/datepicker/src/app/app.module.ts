@@ -9,7 +9,7 @@ import { CalendarComponent } from './calendar/calendar.component';
   declarations: [
     AppComponent,
     CalendarPipe,
-    CalendarComponent
+    CalendarComponent,
   ],
   imports: [
     BrowserModule

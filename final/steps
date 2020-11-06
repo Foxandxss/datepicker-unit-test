@@ -1,0 +1,7 @@
+* Explain NX a bit
+* Explain why Jest
+  2-3x times faster
+  snapshot
+  better CI (jsdom)
+  Less config
+

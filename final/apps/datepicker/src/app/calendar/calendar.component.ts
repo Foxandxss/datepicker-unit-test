@@ -1,8 +1,9 @@
-import { Component, Input, AfterContentChecked } from '@angular/core';
-import { Day, CalendarService } from './calendar.service';
+import { AfterContentChecked, Component, Input } from '@angular/core';
+
+import { CalendarService, Day } from './calendar.service';
 
 @Component({
-  selector: 'app-calendar',
+  selector: 'datepicker-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
@@ -13,7 +14,9 @@ export class CalendarComponent implements AfterContentChecked {
 
   weekDays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
-  constructor(private service: CalendarService) {}
+  constructor(private service: CalendarService) {
+
+  }
 
   ngAfterContentChecked() {
     const dateParams = this.date.split('/');

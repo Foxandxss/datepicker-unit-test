@@ -1,25 +1,23 @@
+import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { CalendarComponent } from './calendar.component';
-import { Component } from '@angular/core';
-import { By } from '@angular/platform-browser';
 import { CalendarPipe } from './calendar.pipe';
 import { CalendarService } from './calendar.service';
 
 describe('CalendarComponent', () => {
-  let component: CalendarComponent;
   let fixture: ComponentFixture<HostComponent>;
-  let hostComponent: HostComponent;
+  let component: CalendarComponent;
   let service: CalendarService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ CalendarComponent, HostComponent, CalendarPipe ],
-      providers: [ CalendarService ]
+      providers: [CalendarService]
     });
 
     fixture = TestBed.createComponent(HostComponent);
-    hostComponent = fixture.componentInstance;
     component = fixture.debugElement.children[0].componentInstance;
     service = fixture.debugElement.children[0].injector.get(CalendarService);
 
@@ -27,12 +25,12 @@ describe('CalendarComponent', () => {
   });
 
   it('has an input for the date', () => {
-    expect(component.date).toBe('2019/8');
+    expect(component.date).toBe('2020/11');
   });
 
   it('contains the formatted date on a header', () => {
     const header: HTMLDivElement = fixture.debugElement.query(By.css('.card > .card-header')).nativeElement;
-    expect(header.textContent).toContain('September of 2019');
+    expect(header.textContent).toContain('November of 2020');
   });
 
   it('has the week days letters on top (by default, Monday)', () => {
@@ -48,7 +46,7 @@ describe('CalendarComponent', () => {
     spyOn(service, 'getMonth').and.callThrough();
     component.ngAfterContentChecked();
     expect(component.days.length).toBe(42);
-    expect(service.getMonth).toHaveBeenCalledWith(2019, 8);
+    expect(service.getMonth).toHaveBeenCalledWith(2020, 11);
   });
 
   it('shows the days on screen', () => {
@@ -68,9 +66,9 @@ describe('CalendarComponent', () => {
 });
 
 @Component({
-  selector: 'app-host-cmp',
-  template: '<app-calendar [date]="date"></app-calendar>'
+  selector: 'datepicker-host-cmp',
+  template: '<datepicker-calendar [date]="date"></datepicker-calendar>'
 })
 class HostComponent {
-  date = '2019/8';
+  date = '2020/11';
 }
